@@ -1,7 +1,9 @@
-import React from 'react'
-import styles from './index.module.css'
+import React from 'react';
+import styles from './index.module.css';
 import * as burgerConstants from './../burgerConstants';
+import PropTypes from 'prop-types';
 
+/** @param {string} type */
 function setBurgerIngredient (type) {
   let ingredient = null
   switch(type) {
@@ -29,10 +31,17 @@ function setBurgerIngredient (type) {
       ingredient = <div className={styles.Cheese}></div>
       break 
     default:
-      ingredient = null   
+      ingredient = null  
   }
   return ingredient;  
 }
-export default function BurgerIngredient({ type }) {
-   return setBurgerIngredient();
+/**@param {Object} props
+ * @param {string} props.type 
+ */
+export default function BurgerIngredient(props) {
+   return setBurgerIngredient( props.type );
 }
+
+BurgerIngredient.propTypes = {
+  type: PropTypes.string.isRequired
+};

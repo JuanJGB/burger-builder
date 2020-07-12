@@ -4,12 +4,18 @@
   import * as constants from './burgerConstants';
   
   export default function Burger(props) {
-    const transformedIngredients = Object.keys(props.ingredients)
+    let transformedIngredients = Object.keys(props.ingredients)
       .map(ingredientKey => {
         return [...Array(props.ingredients[ingredientKey])].map((_, index) => {
           return <BurgerIngredient key={ingredientKey + index} type={ingredientKey} />;
         })
       })
+      .reduce((values, element) => {
+        return values.concat(element);
+      }, []);
+    if (transformedIngredients.length === 0) {
+      transformedIngredients = <p>Please start adding ingredients</p>;
+    }  
     console.log(transformedIngredients);
     return (
       <div className={styles.Burger}>

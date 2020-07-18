@@ -1,11 +1,12 @@
 import React from 'react';
+import styles from './style.module.css';
 
 export default function BuildControl(props) {
   return (
-    <div>
-      <div>{props.ingredientLabel}</div>
-      <div>Less</div>
-      <div>More</div>
+    <div className={styles.BuildControl}>
+      <div className={styles.Label}>{props.ingredientLabel}</div>
+      <button className={styles.Less}>Less</button>
+      <button className={styles.More}>More</button>
     </div>
   )
 }

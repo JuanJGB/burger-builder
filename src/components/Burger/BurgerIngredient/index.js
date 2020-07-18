@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.css';
+import styles from './style.module.css';
 import * as burgerConstants from './../burgerConstants';
 import PropTypes from 'prop-types';
 

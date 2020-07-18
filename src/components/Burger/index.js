@@ -1,5 +1,5 @@
   import React from 'react'
-  import styles from './index.module.css';
+  import styles from './style.module.css';
   import BurgerIngredient from './BurgerIngredient';
   import * as constants from './burgerConstants';
   

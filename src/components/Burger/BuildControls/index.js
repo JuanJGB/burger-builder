@@ -9,18 +9,28 @@ const controls = [
   { ingredientLabel: 'Cheese', type: ingredientsConstants.CHEESE },
   { ingredientLabel: 'Meat', type: ingredientsConstants.MEAT },
 ];
-/**@param {Object} props
- * @param {Function} props.ingredientAdded*/
-export default function BuildControls({ ingredientAdded }) {
+
+export default function BuildControls({ ingredientAdded, ingredientRemoved, disabledIngredients, price, purchasable }) {
   return (
     <div className={styles.BuildControls}>
+      <p>Current price:  
+        <span className={styles.CurrentPrice}>
+        &nbsp; {price.toFixed(2)}   
+        </span>
+      </p>
       {controls.map(control => (
         <BuildControl 
           key={control.ingredientLabel} 
           ingredientLabel={control.ingredientLabel}
-          added={() => ingredientAdded(control.type)}   
+          added={() => ingredientAdded(control.type)}  
+          removed={() => ingredientRemoved(control.type)}  
+          disabled={disabledIngredients[control.type]}
         />  
       ))}
+      <button 
+        className={styles.OrderButton}
+        disabled={!purchasable}>ORDER NOW
+      </button>
     </div>
   )
 }

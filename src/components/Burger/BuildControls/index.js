@@ -9,12 +9,17 @@ const controls = [
   { ingredientLabel: 'Cheese', type: ingredientsConstants.CHEESE },
   { ingredientLabel: 'Meat', type: ingredientsConstants.MEAT },
 ];
-
-export default function BuildControls() {
+/**@param {Object} props
+ * @param {Function} props.ingredientAdded*/
+export default function BuildControls({ ingredientAdded }) {
   return (
     <div className={styles.BuildControls}>
       {controls.map(control => (
-        <BuildControl key={control.ingredientLabel} ingredientLabel={control.ingredientLabel}/>  
+        <BuildControl 
+          key={control.ingredientLabel} 
+          ingredientLabel={control.ingredientLabel}
+          added={() => ingredientAdded(control.type)}   
+        />  
       ))}
     </div>
   )

@@ -1,16 +1,16 @@
 import React from 'react';
-import styles from './index.module.css';
 import Logo from '../../Logo';
 import NavigationItems from '../NavigationItems';
+import styles from './index.module.css';
 
-export default function Toolbar () {
+export default function SideDrawer() {
+
   return (
-    <header className={styles.Toolbar}>
-      <div>Menu</div>
+    <div className={styles.SideDrawer}>
       <Logo />
       <nav>
         <NavigationItems />
       </nav>
-    </header>
-  );
+    </div>
+  )
 }

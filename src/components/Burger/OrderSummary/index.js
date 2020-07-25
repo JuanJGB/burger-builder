@@ -1,6 +1,7 @@
 import React from 'react';
 import Aux from '../../../HOC/Auxiliary';
-export default function OrderSummary ({ ingredients }) {
+import Button from '../../../components/UI/Button';
+export default function OrderSummary ({ ingredients, purchaseCanceled, purchaseContinued }) {
   const ingredientSummary = Object.keys(ingredients)
     .map(ingredientKey => {
       return (
@@ -18,6 +19,8 @@ export default function OrderSummary ({ ingredients }) {
           {ingredientSummary}
         </ul>
         <p>Continue to Checkout?</p>
+        <Button buttonType="Danger" clicked={purchaseCanceled}>CANCEL</Button>
+        <Button buttonType="Success" clicked={purchaseContinued}>CONTINUE</Button>
       </Aux>
     </div>
   )

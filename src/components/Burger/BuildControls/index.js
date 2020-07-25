@@ -10,7 +10,7 @@ const controls = [
   { ingredientLabel: 'Meat', type: ingredientsConstants.MEAT },
 ];
 
-export default function BuildControls({ ingredientAdded, ingredientRemoved, disabledIngredients, price, purchasable }) {
+export default function BuildControls({ ingredientAdded, ingredientRemoved, disabledIngredients, price, purchasable, ordered }) {
   return (
     <div className={styles.BuildControls}>
       <p>Current price:  
@@ -29,7 +29,8 @@ export default function BuildControls({ ingredientAdded, ingredientRemoved, disa
       ))}
       <button 
         className={styles.OrderButton}
-        disabled={!purchasable}>ORDER NOW
+        disabled={!purchasable}
+        onClick={ordered}> ORDER NOW
       </button>
     </div>
   )

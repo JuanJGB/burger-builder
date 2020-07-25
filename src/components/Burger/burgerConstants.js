@@ -1,6 +1,6 @@
-export const CHEESE = 'CHEESE';
-export const MEAT = 'MEAT';
-export const SALAD = 'SALAD';
-export const BACON = 'BACON';
-export const BREAD_TOP = 'BREAD_TOP';
-export const BREAD_BOTTOM = 'BREAD_BOTTOM';
+export const CHEESE = 'cheese';
+export const MEAT = 'meat';
+export const SALAD = 'salad';
+export const BACON = 'bacon';
+export const BREAD_TOP = 'bread_top';
+export const BREAD_BOTTOM = 'bread_bottom';

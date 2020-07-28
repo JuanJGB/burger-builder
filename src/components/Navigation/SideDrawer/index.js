@@ -4,6 +4,7 @@ import NavigationItems from '../NavigationItems';
 import styles from './index.module.css';
 import Backdrop from '../../UI/Backdrop';
 import Aux from '../../../HOC/Auxiliary';
+
 export default function SideDrawer({ closed, open }) {
   let attachedClasses = [styles.SideDrawer, styles.Close];
   if (open) {

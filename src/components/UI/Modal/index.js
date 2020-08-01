@@ -6,7 +6,7 @@ import Backdrop from '../Backdrop';
 export default class Modal extends Component {
   //will be converted to functional component
   shouldComponentUpdate(nextProps, nextState ) {
-    return nextProps.show !== this.props.show;
+    return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
   }
   componentDidUpdate () {
     console.log('[Modal] DidUpdate');

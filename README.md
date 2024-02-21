@@ -1,1 +1,2 @@
-# burger-builder
+# Burguer Builder
+Developed with React
